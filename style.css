@@ -1,0 +1,85 @@
+#colors {
+    color: #9CF6FB;
+    color: #E1FCFD;
+    color: #394F8A;
+    color: #4A5FC1;
+    color: #E5B9A8;
+    color: #EAD6CD;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.page__header {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    margin: 0;
+    background: conic-gradient(at 50% 30%, #4A5FC1, #9CF6FB);
+    font-family: 'Press Start 2P', cursive;
+}
+
+.page__title {
+    position: relative;
+    font-size: 42px;
+    text-align: center;
+    /* color: rgba(225,252,253,0); */
+    color: rgba(245,252,253,0);
+    display: inline-block;
+
+    -webkit-animation: mainFadeIn 2s forwards;
+    -o-animation: mainFadeIn 2s forwards;
+    animation: mainFadeIn 2s forwards;
+    animation-delay: 1.6s;
+}
+
+.page__title::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #E1FCFD;
+
+    animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+    display: flex;
+}
+
+
+@keyframes mainBlock {
+    0% {
+        width: 0%;
+        left: 0;
+
+    }
+
+    50% {
+        width: 100%;
+        left: 0;
+
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes mainFadeIn {
+    0% {
+        color: rgba(245,252,253,0);
+    }
+
+    100% {
+        color: rgba(245,252,253,1);
+    }
+}
