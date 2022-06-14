@@ -7,9 +7,22 @@
     color: #EAD6CD;
 }
 
-body {
+html, body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
+    background: conic-gradient(at 50% 180px, #4A5FC1, #9CF6FB);
+    height: 100%;
+}
+
+.container {
+    width: 80%;
+    /* height: auto; */
+    margin: 0 auto;
+    padding: 0 10%;
+    flex-grow: 1;
+    /* box-sizing: border-box; */
 }
 
 .page__header {
@@ -17,7 +30,7 @@ body {
     justify-content: center;
     padding: 0;
     margin: 0;
-    background: conic-gradient(at 50% 30%, #4A5FC1, #9CF6FB);
+    
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -50,16 +63,190 @@ body {
     display: flex;
 }
 
-@media (min-width: 768px) {
+.form {
+    padding-top: 10px;
+}
+
+.form__fields {
+    position: relative;
+}
+
+.label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    /* margin: 0; */
+    margin: 10px 0 0px 0;
+    color: #394F8A;
+}
+
+.form__field {
+    width: 100%;
+    margin: 5px 0 10px 0;
+}
+
+.field {
+    display: inline-block;
+    padding: 7px 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.4;
+    color: black;
+    border: 2px solid #394F8A; 
+}
+
+.field--input {
+    background-color: rgba(245, 252, 253, 1);;
+    color: #394F8A;
+}
+
+.field--input:hover {
+    background-color: #394F8A;
+    color: #fff;
+    cursor: pointer;
+}
+
+.field--select {
+    background-color: rgba(245, 252, 253, 1);;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: radio-container;
+    appearance: none;
+}
+
+.form__criteria {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.form__criterion input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.form__criterion {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    /* border-right: 1px solid #394F8A; */
+    /* padding-right: 20px;
+    margin-right: 20px; */
+}
+
+/* .form__criterion:first-child {
+    border-left: none;
+} */
+
+.form__criterion:last-child {
+    border-right: none;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+.form__subtitle {
+    flex-basis: 100%;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.form__radio-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+svg {
+	fill: rgb(242, 242, 242);
+	height: 25px;
+	width: 25px;
+	margin: 5px;
+}
+
+#radios label {
+	position: relative;
+}
+
+input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+}
+
+input[type="radio"] + svg {
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+input + svg {
+	cursor: pointer;
+}
+
+input[class="super-happy"]:hover + svg,
+input[class="super-happy"]:checked + svg,
+input[class="super-happy"]:focus + svg {
+	fill: rgb(0, 109, 217);
+}
+
+input[class="happy"]:hover + svg,
+input[class="happy"]:checked + svg,
+input[class="happy"]:focus + svg {
+	fill: rgb(0, 204, 79);
+}
+
+input[class="neutral"]:hover + svg,
+input[class="neutral"]:checked + svg,
+input[class="neutral"]:focus + svg {
+	fill: rgb(232, 214, 0);
+}
+
+input[class="sad"]:hover + svg,
+input[class="sad"]:checked + svg,
+input[class="sad"]:focus + svg {
+	fill: rgb(229, 132, 0);
+}
+
+input[class="super-sad"]:hover + svg,
+input[class="super-sad"]:checked + svg,
+input[class="super-sad"]:focus + svg {
+	fill: rgb(239, 42, 16);
+}
+
+
+@media (min-width: 1024px) {
     .container {
-        width: 560px;
+        width: 960px;
         height: auto;
         margin: 0 auto;
+        /* box-sizing: border-box; */
+        padding: 0;
     }
 
     .page__title {
         font-size: 50px;
-        margin: 65px 10px 55px 10px;
+        margin: 100px 10px 25px 10px;
+    }
+
+    .form__criteria {
+        flex-direction: row;
+    }
+
+    .form__criterion {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 25%;
+        border-right: 1px solid #394F8A;
+        padding-right: 20px;
+        margin-right: 20px;
     }
 }
 
